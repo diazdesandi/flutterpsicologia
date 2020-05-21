@@ -61,67 +61,64 @@ class _MyAppState extends State<MyApp> {
         fit: StackFit.expand,
         children: <Widget>[
           SingleChildScrollView(
-            child: Padding(
-              padding: EdgeInsets.only(left: 28.0, right: 28.0, top: 50.0),
-              child: Column(
+              child: Padding(
+            padding: EdgeInsets.only(left: 28.0, right: 28.0, top: 50.0),
+            child: Column(children: <Widget>[
+              SizedBox(
+                height: ScreenUtil.getInstance().setHeight(230),
+              ),
+              FormCard(),
+              SizedBox(height: ScreenUtil.getInstance().setHeight(60)),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  SizedBox(
-                    height: ScreenUtil.getInstance().setHeight(230),
-                  ),
-                  FormCard(),
-                  SizedBox(height: ScreenUtil.getInstance().setHeight(60)),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      Row(
-                        children: <Widget>[
-                          SizedBox(
-                            width: 12.0,
-                          ),
-                          GestureDetector(
-                            onTap: _radio,
-                            child: radioButton(_isSelected),
-                          ),
-                          SizedBox(
-                            width: 8.0,
-                          ),
-                          Text("Recordar datos",
-                              style: GoogleFonts.roboto(
-                                  textStyle: TextStyle(
-                                      fontSize: ScreenUtil.getInstance().setSp(26),
-                                      fontWeight: FontWeight.bold)))
-                        ],
-                      ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: <Widget>[
-                            FlatButton(
-                                textColor: Colors.white,
-                                color: Colors.redAccent,
-                                child: Text('Iniciar sesión'),
-                                onPressed: (){
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(builder: (context) => xd_menu())
-                                  );
-                                }),
-                          ],
-                        ),
                       SizedBox(
-                        height: ScreenUtil.getInstance().setHeight(40),
+                        width: 12.0,
+                      ),
+                      GestureDetector(
+                        onTap: _radio,
+                        child: radioButton(_isSelected),
                       ),
                       SizedBox(
-                        height: ScreenUtil.getInstance().setHeight(40),
+                        width: 8.0,
                       ),
-                      SizedBox(
-                        height: ScreenUtil.getInstance().setHeight(30),
-                      ),
+                      Text("Recordar datos",
+                          style: GoogleFonts.roboto(
+                              textStyle: TextStyle(
+                                  fontSize: ScreenUtil.getInstance().setSp(26),
+                                  fontWeight: FontWeight.bold)))
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: <Widget>[
+                      FlatButton(
+                          textColor: Colors.white,
+                          color: Colors.redAccent,
+                          child: Text('Iniciar sesión'),
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => BottomNavBar()));
+                          }),
+                    ],
+                  ),
+                  SizedBox(
+                    height: ScreenUtil.getInstance().setHeight(40),
+                  ),
+                  SizedBox(
+                    height: ScreenUtil.getInstance().setHeight(40),
+                  ),
+                  SizedBox(
+                    height: ScreenUtil.getInstance().setHeight(30),
+                  ),
                 ],
               ),
-            ]
-              ),
-          )
-          )
+            ]),
+          ))
         ],
       ),
     );

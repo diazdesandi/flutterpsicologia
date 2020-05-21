@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class home extends StatelessWidget{
+class videos extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Container(
-      child: Text('Menú', textScaleFactor: 2.0,),height: 200,
+      child: Text('Videos', textScaleFactor: 2.0),
     );
   }
 }

@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'dart:ui' as ui;
 import 'package:google_fonts/google_fonts.dart';
 import 'widcorre.dart';
 import 'main.dart';

@@ -1,56 +1,83 @@
 import 'package:flutter/material.dart';
-import './pages/home.dart';
-import './pages/categories.dart';
-import './pages/search.dart';
-void main() => runApp(new xd_menu());
-class xd_menu extends StatefulWidget {
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'pages/chat.dart';
+import 'pages/feed.dart';
+import 'pages/home.dart';
+import 'pages/perfil.dart';
+import 'pages/videos.dart';
+
+void main() => runApp(MaterialApp(home: BottomNavBar()));
+
+class BottomNavBar extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() {
-    return xd_menustate();
-  }
+  _BottomNavBarState createState() => _BottomNavBarState();
 }
-class xd_menustate extends State<xd_menu> {
-  int _selectedTab = 0;
-  final _pageOptions = [
-    HomePage(),
-    CatPage(),
-    SearchPage(),
-  ];
+
+class _BottomNavBarState extends State<BottomNavBar> {
+  int pageIndex = 2;
+  GlobalKey _bottomNavigationKey = GlobalKey();
+
+
+  // Creacion de paginas
+  final chat _messages = chat();
+  final feed _articulos = feed();
+  final home _menu = home();
+  final perfil _info = perfil();
+  final videos _vids = videos();
+
+  Widget _menuprincipal = new home();
+  
+  Widget _selector(int page){
+    switch(page){
+      case 0:
+      return _messages;
+      break;
+      case 1:
+      return _articulos;
+      break;
+      case 2:
+      return _menu;
+      break;
+      case 3:
+      return _vids;
+      break;
+      case 4:
+      return _info;
+      break;
+    }
+  }
+
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-          primarySwatch: Colors.grey,
-          primaryTextTheme: TextTheme(
-            title: TextStyle(color: Colors.white),
-          )),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Menú'),
-        ),
-        body: _pageOptions[_selectedTab],
-        bottomNavigationBar: BottomNavigationBar(
-          currentIndex: _selectedTab,
-          onTap: (int index) {
+    return Scaffold(
+        bottomNavigationBar: CurvedNavigationBar(
+          key: _bottomNavigationKey,
+          index: pageIndex,
+          height: 50.0,
+          items: <Widget>[
+            Icon(Icons.message, size: 30, color: Colors.white),
+            Icon(Icons.rss_feed, size: 30, color: Colors.white),
+            Icon(Icons.home, size: 30, color: Colors.white),
+            Icon(Icons.ondemand_video, size: 30, color: Colors.white,),
+            Icon(Icons.perm_identity, size: 30, color: Colors.white,),
+          ],
+          color: Colors.redAccent,
+          buttonBackgroundColor: Colors.redAccent,
+          backgroundColor: Colors.white,
+          animationCurve: Curves.easeInOut,
+          animationDuration: Duration(milliseconds: 600),
+          onTap: (int tappedIndex) {
             setState(() {
-              _selectedTab = index;
+              _menuprincipal = _selector(tappedIndex);
             });
           },
-          items: [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              title: Text('Home'),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.category),
-              title: Text('Categories'),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.search),
-              title: Text('Search'),
-            ),
-          ],
         ),
-      ),
-    );
-  }}
+        body: Container(
+          color: Colors.white,
+          child: Center(
+            child: _menuprincipal,
+          ),
+        ));
+  }
+}
