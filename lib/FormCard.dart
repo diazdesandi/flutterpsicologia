@@ -12,15 +12,15 @@ class FormCard extends StatelessWidget {
         height: 300,
         padding: EdgeInsets.only(bottom: 1),
         decoration: BoxDecoration(
-            color: Colors.redAccent,
+            color: Colors.white,
             borderRadius: BorderRadius.circular(8.0),
             boxShadow: [
               BoxShadow(
-                  color: Colors.black12,
+                  color: Colors.white,
                   offset: Offset(0.0, 15.0),
                   blurRadius: 15.0),
               BoxShadow(
-                  color: Colors.black12,
+                  color: Colors.white,
                   offset: Offset(0.0, -10.0),
                   blurRadius: 10.0),
             ]),
@@ -34,7 +34,7 @@ class FormCard extends StatelessWidget {
                           textStyle: TextStyle(
                               fontSize: ScreenUtil.getInstance().setSp(45),
                               fontWeight: FontWeight.bold,
-                              color: Colors.white,
+                              color:  const Color(0xff515c6f),
                               letterSpacing: .6))),
                   SizedBox(
                     height: ScreenUtil.getInstance().setHeight(30),
@@ -43,9 +43,9 @@ class FormCard extends StatelessWidget {
                   Text("Contraseña",
                       style: GoogleFonts.roboto(
                           textStyle: TextStyle(
-                              fontSize: ScreenUtil.getInstance().setSp(26),
+                              fontSize: ScreenUtil.getInstance().setSp(28),
                               fontWeight: FontWeight.bold,
-                              color: Colors.white))),
+                              color: Colors.redAccent))),
                   TextField(
                     obscureText: true,
                     decoration: InputDecoration(
@@ -59,7 +59,7 @@ class FormCard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: <Widget>[
                       FlatButton(
-                        textColor: Colors.white,
+                        textColor:  const Color(0xff515c6f),
                         color: Colors.transparent,
                         child: Text('¿Olvidaste tu contraseña?'),
                         onPressed: (){

@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'pages/chat.dart';
-import 'pages/feed.dart';
-import 'pages/home.dart';
-import 'pages/perfil.dart';
-import 'pages/videos.dart';
+import 'paginas/feed.dart';
+import 'paginas/home.dart';
+import 'paginas/videos.dart';
 
 void main() => runApp(MaterialApp(home: BottomNavBar()));
 
@@ -14,36 +12,30 @@ class BottomNavBar extends StatefulWidget {
 }
 
 class _BottomNavBarState extends State<BottomNavBar> {
-  int pageIndex = 2;
+  int pageIndex = 1;
   GlobalKey _bottomNavigationKey = GlobalKey();
 
 
   // Creacion de paginas
-  final chat _messages = chat();
   final feed _articulos = feed();
   final home _menu = home();
-  final perfil _info = perfil();
-  final videos _vids = videos();
+  final clasevideos _vids = clasevideos();
 
   Widget _menuprincipal = new home();
   
   Widget _selector(int page){
     switch(page){
       case 0:
-      return _messages;
-      break;
-      case 1:
       return _articulos;
       break;
-      case 2:
+      case 1:
       return _menu;
       break;
-      case 3:
+      case 2:
       return _vids;
       break;
-      case 4:
-      return _info;
-      break;
+      default:
+      return _menu;
     }
   }
 
@@ -56,11 +48,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
           index: pageIndex,
           height: 50.0,
           items: <Widget>[
-            Icon(Icons.message, size: 30, color: Colors.white),
             Icon(Icons.rss_feed, size: 30, color: Colors.white),
             Icon(Icons.home, size: 30, color: Colors.white),
             Icon(Icons.ondemand_video, size: 30, color: Colors.white,),
-            Icon(Icons.perm_identity, size: 30, color: Colors.white,),
           ],
           color: Colors.redAccent,
           buttonBackgroundColor: Colors.redAccent,

@@ -14,9 +14,9 @@ class Widcorre extends StatelessWidget {
             Text("Correo electrónico",
             style: GoogleFonts.roboto(
                 textStyle: TextStyle(
-                    fontSize: ScreenUtil.getInstance().setSp(26),
+                    fontSize: ScreenUtil.getInstance().setSp(28),
                     fontWeight: FontWeight.bold,
-                    color: Colors.white))),
+                    color: Colors.redAccent))),
         TextField(
           decoration: InputDecoration(
               hintStyle:
