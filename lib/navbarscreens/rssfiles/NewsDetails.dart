@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
-
 class NewsDetails extends StatefulWidget {
-  NewsDetails({Key key, this.title,this.url}) : super(key: key);
+  NewsDetails({Key key, this.title, this.url}) : super(key: key);
 
   final String title;
   final String url;
@@ -13,25 +12,17 @@ class NewsDetails extends StatefulWidget {
 }
 
 class _NewsDetailsState extends State<NewsDetails> {
-
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
       ),
       body: Center(
-        child: WebView(
-          initialUrl: widget.url,
-          javascriptMode: JavascriptMode.unrestricted,
-        )
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: null,
-        tooltip: 'Share next and last video / en el siguiente video',
-        child: Icon(Icons.share),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+          child: WebView(
+        initialUrl: widget.url,
+        javascriptMode: JavascriptMode.unrestricted,
+      )),
     );
   }
 }

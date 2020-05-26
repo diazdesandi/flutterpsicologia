@@ -11,23 +11,20 @@ class Widcorre extends StatelessWidget {
         child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-            Text("Correo electrónico",
-            style: GoogleFonts.roboto(
-                textStyle: TextStyle(
-                    fontSize: ScreenUtil.getInstance().setSp(28),
-                    fontWeight: FontWeight.bold,
-                    color: Colors.redAccent))),
-        TextField(
-          decoration: InputDecoration(
-              hintStyle:
-              TextStyle(color: Colors.grey, fontSize: 12.0)),
-        ),
-        SizedBox(
-            height: ScreenUtil.getInstance().setHeight(30),
-            )
-            ]
-        )
-    );
+              Text("Correo electrónico",
+                  style: GoogleFonts.roboto(
+                      textStyle: TextStyle(
+                          fontSize: ScreenUtil.getInstance().setSp(28),
+                          fontWeight: FontWeight.bold,
+                          color: Colors.redAccent))),
+              TextField(
+                decoration: InputDecoration(
+                    hintStyle: TextStyle(color: Colors.grey, fontSize: 12.0)),
+              ),
+              SizedBox(
+                height: ScreenUtil.getInstance().setHeight(30),
+              )
+            ]));
   }
 }
 
@@ -48,14 +45,11 @@ class Widcorredos extends StatelessWidget {
                           color: Colors.redAccent))),
               TextField(
                 decoration: InputDecoration(
-                    hintStyle:
-                    TextStyle(color: Colors.grey, fontSize: 12.0)),
+                    hintStyle: TextStyle(color: Colors.grey, fontSize: 12.0)),
               ),
               SizedBox(
                 height: ScreenUtil.getInstance().setHeight(30),
               )
-            ]
-        )
-    );
+            ]));
   }
 }

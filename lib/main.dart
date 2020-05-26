@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'FormCard.dart';
+import 'login/logincard.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'menuprincipal.dart';
+import 'navbarscreens/navbarmaster.dart';
 
 void main() => runApp(MaterialApp(
       home: MyApp(),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutterpsicologia/paginas/youtubevideodata/modelos/modelovideo.dart';
-import 'package:flutterpsicologia/paginas/youtubevideodata/pantallas/reproductor.dart';
-import 'youtubevideodata/modelos/modelocanal.dart';
-import 'youtubevideodata/servicios/servicioapi.dart';
+import 'package:flutterpsicologia/pages/youtubevideodata/keysandotherfiles/apiservice.dart';
+import 'package:flutterpsicologia/pages/youtubevideodata/modelos/channelmodel.dart';
+import 'package:flutterpsicologia/pages/youtubevideodata/modelos/videomodel.dart';
+import 'package:flutterpsicologia/pages/youtubevideodata/modelos/videoplayer.dart';
 
 void videos() => runApp(ClaseVideos());
 
@@ -40,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   _initChannel() async {
-    Channel channel = await ServicioAPI.instance
+    Channel channel = await API_Service.instance
         .fetchChannel(channelId: 'UCJGnudhMkWuMB98dFFFDtuA');
     if (!mounted) return;
     setState(() {
@@ -148,7 +148,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   _loadMoreVideos() async {
     _isLoading = true;
-    List<Video> moreVideos = await ServicioAPI.instance
+    List<Video> moreVideos = await API_Service.instance
         .fetchVideosFromPlaylist(playlistId: _channel.uploadPlaylistId);
     List<Video> allVideos = _channel.videos..addAll(moreVideos);
     setState(() {
@@ -160,9 +160,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-          appBar: AppBar(
-          title: const Text('Videos')
-          ),
+      appBar: AppBar(title: const Text('Videos')),
       body: _channel != null
           ? NotificationListener<ScrollNotification>(
               onNotification: (ScrollNotification scrollDetails) {

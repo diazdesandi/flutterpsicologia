@@ -1,14 +1,14 @@
 import 'dart:convert';
 import 'dart:io';
+import 'package:flutterpsicologia/pages/youtubevideodata/modelos/channelmodel.dart';
+import 'package:flutterpsicologia/pages/youtubevideodata/modelos/videomodel.dart';
 import 'package:http/http.dart' as http;
-import 'package:flutterpsicologia/paginas/youtubevideodata/modelos/modelocanal.dart';
-import 'package:flutterpsicologia/paginas/youtubevideodata/modelos/modelovideo.dart';
-import 'package:flutterpsicologia/paginas/youtubevideodata/utilidades/keys.dart';
+import 'keys.dart';
 
-class ServicioAPI {
-  ServicioAPI._instantiate();
+class API_Service {
+  API_Service._instantiate();
 
-  static final ServicioAPI instance = ServicioAPI._instantiate();
+  static final API_Service instance = API_Service._instantiate();
 
   final String _baseurl = 'www.googleapis.com';
   String _nextpagetoken = '';

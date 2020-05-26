@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'paginas/feed.dart';
-import 'paginas/home.dart';
-import 'paginas/videos.dart';
+
+import 'feed.dart';
+import 'home.dart';
+import 'videos.dart';
 
 void main() => runApp(MaterialApp(home: BottomNavBar()));
 
@@ -15,27 +16,26 @@ class _BottomNavBarState extends State<BottomNavBar> {
   int pageIndex = 1;
   GlobalKey _bottomNavigationKey = GlobalKey();
 
-
   // Creacion de paginas
   final MyFeed _articulos = MyFeed();
   final Home _menu = Home();
   final ClaseVideos _vids = ClaseVideos();
 
   Widget _menuprincipal = new Home();
-  
-  Widget _selector(int page){
-    switch(page){
+
+  Widget _selector(int page) {
+    switch (page) {
       case 0:
-      return _articulos;
-      break;
+        return _articulos;
+        break;
       case 1:
-      return _menu;
-      break;
+        return _menu;
+        break;
       case 2:
-      return _vids;
-      break;
+        return _vids;
+        break;
       default:
-      return _menu;
+        return _menu;
     }
   }
 
@@ -49,7 +49,11 @@ class _BottomNavBarState extends State<BottomNavBar> {
           items: <Widget>[
             Icon(Icons.rss_feed, size: 30, color: Colors.white),
             Icon(Icons.home, size: 30, color: Colors.white),
-            Icon(Icons.ondemand_video, size: 30, color: Colors.white,),
+            Icon(
+              Icons.ondemand_video,
+              size: 30,
+              color: Colors.white,
+            ),
           ],
           color: Colors.redAccent,
           buttonBackgroundColor: Colors.redAccent,
