@@ -5,7 +5,7 @@ import 'package:flutter_calendar_carousel/classes/event.dart';
 import 'package:flutter_calendar_carousel/classes/event_list.dart';
 import 'package:intl/intl.dart' show DateFormat;
 
-class agendar extends StatelessWidget {
+class Agendar extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {

@@ -5,8 +5,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'widcorre.dart';
 import 'main.dart';
 
-class XD_reestabcontra extends StatelessWidget {
-  XD_reestabcontra({
+class Recontra extends StatelessWidget {
+  Recontra({
     Key key,
   }) : super(key: key);
   @override

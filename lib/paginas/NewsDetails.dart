@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:webview_flutter/webview_flutter.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+
 
 class NewsDetails extends StatefulWidget {
   NewsDetails({Key key, this.title,this.url}) : super(key: key);
@@ -12,7 +13,6 @@ class NewsDetails extends StatefulWidget {
 }
 
 class _NewsDetailsState extends State<NewsDetails> {
-  int _counter = 0;
 
   @override
   Widget build(BuildContext context) {

@@ -65,7 +65,7 @@ class FormCard extends StatelessWidget {
                         onPressed: (){
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => XD_reestabcontra()),
+                            MaterialPageRoute(builder: (context) => Recontra()),
                           );
                         })
                 ])])));

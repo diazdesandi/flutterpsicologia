@@ -17,11 +17,11 @@ class _BottomNavBarState extends State<BottomNavBar> {
 
 
   // Creacion de paginas
-  final feed _articulos = feed();
-  final home _menu = home();
-  final clasevideos _vids = clasevideos();
+  final MyFeed _articulos = MyFeed();
+  final Home _menu = Home();
+  final ClaseVideos _vids = ClaseVideos();
 
-  Widget _menuprincipal = new home();
+  Widget _menuprincipal = new Home();
   
   Widget _selector(int page){
     switch(page){
@@ -39,7 +39,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
     }
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,7 +53,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
           ],
           color: Colors.redAccent,
           buttonBackgroundColor: Colors.redAccent,
-          backgroundColor: Colors.white,
+          backgroundColor: Colors.transparent,
           animationCurve: Curves.easeInOut,
           animationDuration: Duration(milliseconds: 600),
           onTap: (int tappedIndex) {
@@ -64,7 +63,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
           },
         ),
         body: Container(
-          color: Colors.white,
+          color: Colors.transparent,
           child: Center(
             child: _menuprincipal,
           ),

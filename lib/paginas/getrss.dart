@@ -1,10 +1,10 @@
 import 'dart:async';
-import 'package:webfeed/webfeed.dart';
 import 'package:http/http.dart' as http;
+import 'package:webfeed/webfeed.dart';
 
 
-class getrss {
-  static Future<List<Noticias>> Getrss() async {
+class GetRSS {
+  static Future<List<Noticias>> gettrss() async {
     var data = await http.get(
         "http://actualidad.rt.com/feeds/all.rss",
         headers: {
