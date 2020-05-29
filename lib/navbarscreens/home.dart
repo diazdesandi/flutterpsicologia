@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutterpsicologia/pages/submenus/calendar.dart';
+import 'package:flutterpsicologia/pages/submenus/profile.dart';
 import 'package:styled_widget/styled_widget.dart';
 
 class Home extends StatelessWidget {
@@ -184,12 +186,16 @@ class Dashpage extends StatelessWidget {
                               borderRadius: BorderRadius.circular(100.0),
                               color: Colors.pink.withOpacity(0.1),
                               child: IconButton(
-                                padding: EdgeInsets.all(15.0),
-                                icon: Icon(Icons.contacts),
-                                color: Colors.pink,
-                                iconSize: 30.0,
-                                onPressed: () {},
-                              ),
+                                  padding: EdgeInsets.all(15.0),
+                                  icon: Icon(Icons.contacts),
+                                  color: Colors.pink,
+                                  iconSize: 30.0,
+                                  onPressed: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => ProfileClass()));
+                                  }),
                             ),
                             SizedBox(height: 8.0),
                             Text('Perfil',
@@ -209,7 +215,12 @@ class Dashpage extends StatelessWidget {
                                 icon: Icon(Icons.calendar_today),
                                 color: Colors.purpleAccent,
                                 iconSize: 30.0,
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => Agendar()));
+                                },
                               ),
                             ),
                             SizedBox(height: 8.0),
