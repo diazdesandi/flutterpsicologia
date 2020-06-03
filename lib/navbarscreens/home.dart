@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutterpsicologia/pages/submenus/calendar.dart';
+import 'package:flutterpsicologia/pages/submenus/ajustes.dart';
 import 'package:flutterpsicologia/pages/submenus/profile.dart';
+import 'package:flutterpsicologia/pages/submenus/notifications.dart';
 import 'package:styled_widget/styled_widget.dart';
 
+// Clase de pantalla de principal
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -13,10 +16,11 @@ class Home extends StatelessWidget {
         ));
   }
 }
-
+// Clase userpage donde se crea el widget con la informacion del perfil que ha iniciado sesion
 class UserPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // Padding para el contenedor de la informacion
     final page = ({Widget child}) => Styled.widget(child: child)
         .padding(vertical: 30, horizontal: 20)
         .constrained(minHeight: 50)
@@ -36,6 +40,8 @@ class UserPage extends StatelessWidget {
 class UserCard extends StatelessWidget {
   Widget _buildUserRow() {
     return <Widget>[
+      // Icono que reemplaza la imagen de perfil, para establecer dicha imagen seria necesario
+      // establecer el backend en Firebase
       Icon(Icons.account_circle)
           .decorated(
             color: Colors.white,
@@ -44,6 +50,7 @@ class UserCard extends StatelessWidget {
           .constrained(height: 50, width: 50)
           .padding(right: 10),
       <Widget>[
+        // Nombre del usuario que inicio sesion
         Text(
           'René Jiménez',
           style: TextStyle(
@@ -55,7 +62,7 @@ class UserCard extends StatelessWidget {
       ].toColumn(crossAxisAlignment: CrossAxisAlignment.start),
     ].toRow();
   }
-
+// Widget donde se establece el color y la forma de los bordes donde se muestra la informacion de usuario
   @override
   Widget build(BuildContext context) {
     return <Widget>[_buildUserRow()]
@@ -72,7 +79,7 @@ class UserCard extends StatelessWidget {
         .alignment(Alignment.center);
   }
 }
-
+// Clase de menu principal donde se establecen todas las opciones disponibles en la aplicacion
 class Dashpage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -109,6 +116,7 @@ class Dashpage extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
+                        // Cada columna dentro de este Widget es una opcion disponible en el menu
                         Column(
                           children: <Widget>[
                             Material(
@@ -161,7 +169,12 @@ class Dashpage extends StatelessWidget {
                                 icon: Icon(Icons.build),
                                 color: Colors.orange,
                                 iconSize: 30.0,
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => Ajustes()));
+                                },
                               ),
                             ),
                             SizedBox(height: 8.0),
@@ -194,7 +207,8 @@ class Dashpage extends StatelessWidget {
                                     Navigator.push(
                                         context,
                                         MaterialPageRoute(
-                                            builder: (context) => ProfileClass()));
+                                            builder: (context) =>
+                                                ProfileClass()));
                                   }),
                             ),
                             SizedBox(height: 8.0),
@@ -238,14 +252,20 @@ class Dashpage extends StatelessWidget {
                               color: Colors.deepPurple.withOpacity(0.1),
                               child: IconButton(
                                 padding: EdgeInsets.all(15.0),
-                                icon: Icon(Icons.desktop_windows),
+                                icon: Icon(Icons.notifications),
                                 color: Colors.deepPurple,
                                 iconSize: 30.0,
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              Notifications()));
+                                },
                               ),
                             ),
                             SizedBox(height: 8.0),
-                            Text('',
+                            Text('Notificaciones',
                                 style: TextStyle(
                                     color: Colors.black54,
                                     fontSize: 15,

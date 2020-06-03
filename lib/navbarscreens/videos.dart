@@ -39,6 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
     _initChannel();
   }
 
+// Se agrega el ID del canal de youtube para recibir una instancia 
   _initChannel() async {
     Channel channel = await API_Service.instance
         .fetchChannel(channelId: 'UCJGnudhMkWuMB98dFFFDtuA');
@@ -48,6 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
+  // Se construye la interfaz de la pantalla de videos, con su respectivo tamaño y padding.
   _buildProfileInfo() {
     return Container(
       margin: EdgeInsets.all(20.0),
@@ -85,6 +87,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   overflow: TextOverflow.ellipsis,
                 ),
+                // Numero de suscriptores del canal
                 Text(
                   '${_channel.subscriberCount} suscriptores',
                   style: TextStyle(
@@ -102,6 +105,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
+// AL momento de pulsar sobre un video nos envia al mismo pero en una pantalla nueva.
   _buildVideo(Video video) {
     return GestureDetector(
       onTap: () => Navigator.push(
@@ -146,6 +150,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
+// Carga la playlist de 8 videos
   _loadMoreVideos() async {
     _isLoading = true;
     List<Video> moreVideos = await API_Service.instance
@@ -156,7 +161,7 @@ class _HomeScreenState extends State<HomeScreen> {
     });
     _isLoading = false;
   }
-
+// Scaffold para crear el conjunto de articulos pertenecientes a los videos que se muestran en la pantala
   @override
   Widget build(BuildContext context) {
     return Scaffold(

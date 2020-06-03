@@ -1,3 +1,4 @@
+// Clase video 
 class Video {
   final String id;
   final String title;
@@ -11,6 +12,7 @@ class Video {
     this.channelTitle,
   });
 
+// Regreso de informacion de video
   factory Video.fromMap(Map<String, dynamic> snippet) {
     return Video(
       id: snippet['resourceId']['videoId'],

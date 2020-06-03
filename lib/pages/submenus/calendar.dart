@@ -6,6 +6,7 @@ import 'package:flutter_calendar_carousel/classes/event.dart';
 import 'package:intl/intl.dart' show DateFormat;
 
 // EJEMPLO DE PAQUETE FLUTTER_CALENDAR
+// Muestra el calendario en la interfaz, sobre la cual se pueden seleccionar ciertos dias.
 
 class Agendar extends StatelessWidget {
   // This widget is the root of your application.
@@ -23,25 +24,23 @@ class Agendar extends StatelessWidget {
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
-
   final String title;
-
   @override
   _MyHomePageState createState() => new _MyHomePageState();
 }
 
+// Clase para mostrar el calendario obtenido del paqueteflutter_calendar_carousel/flutter_calendar_carousel.dart
+// Se establecen ciertas fechas para inicializar el calendario en interfaz asi como la opcion de que cuenta con encabezado
 class _MyHomePageState extends State<MyHomePage> {
   DateTime _currentDate = DateTime(2020, 5, 29);
   DateTime _currentDate2 = DateTime(2020, 5, 30);
   String _currentMonth = DateFormat.yMMM().format(DateTime(2020, 2, 3));
   DateTime _targetDateTime = DateTime(2020, 9, 20);
-//  List<DateTime> _markedDate = [DateTime(2018, 9, 20), DateTime(2018, 10, 11)];
-
   CalendarCarousel _calendarCarousel, _calendarCarouselNoHeader;
 
+// Opciones de interfaz de calendario, botones redondeados asi como color aplicados a cada detalla del mismo.
   @override
   Widget build(BuildContext context) {
-    /// Example Calendar Carousel without header and custom prev & next button
     _calendarCarouselNoHeader = CalendarCarousel<Event>(
       todayBorderColor: Colors.redAccent,
       onDayPressed: (DateTime date, List<Event> events) {
@@ -55,7 +54,6 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       thisMonthDayBorderColor: Colors.grey,
       weekFormat: false,
-//      firstDayOfWeek: 4,
       height: 420.0,
       selectedDateTime: _currentDate2,
       targetDateTime: _targetDateTime,
@@ -109,8 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
               Container(
                 margin: EdgeInsets.symmetric(horizontal: 16.0),
                 child: _calendarCarousel,
-              ), // This trailing comma makes auto-formatting nicer for build methods.
-              //custom icon without header
+              ),
               Container(
                 margin: EdgeInsets.only(
                   top: 30.0,

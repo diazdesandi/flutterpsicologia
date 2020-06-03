@@ -5,6 +5,7 @@ import 'feed.dart';
 import 'home.dart';
 import 'videos.dart';
 
+// Clase para crear y mantener en la interfaz la barra de navegación
 void main() => runApp(MaterialApp(home: BottomNavBar()));
 
 class BottomNavBar extends StatefulWidget {
@@ -12,6 +13,7 @@ class BottomNavBar extends StatefulWidget {
   _BottomNavBarState createState() => _BottomNavBarState();
 }
 
+// Clase principal
 class _BottomNavBarState extends State<BottomNavBar> {
   int pageIndex = 1;
   GlobalKey _bottomNavigationKey = GlobalKey();
@@ -23,6 +25,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
 
   Widget _menuprincipal = new Home();
 
+// Switch para al momento de cambiar hacia otro numero del contador, este cambia a otra pagina.
   Widget _selector(int page) {
     switch (page) {
       case 0:
@@ -39,27 +42,31 @@ class _BottomNavBarState extends State<BottomNavBar> {
     }
   }
 
+// Override con el estilo de la barra de navegación
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         bottomNavigationBar: CurvedNavigationBar(
           key: _bottomNavigationKey,
           index: pageIndex,
+          // Tamaño de la barra de navegación
           height: 50.0,
+          // Opciones en la barra de navegación
           items: <Widget>[
             Icon(Icons.rss_feed, size: 30, color: Colors.white),
             Icon(Icons.home, size: 30, color: Colors.white),
-            Icon(
-              Icons.ondemand_video,
-              size: 30,
-              color: Colors.white,
-            ),
+            Icon(Icons.ondemand_video, size: 30, color: Colors.white),
           ],
+          // Color para la barra de navegación
           color: Colors.redAccent,
+          // Color de fondo para cada botón
           buttonBackgroundColor: Colors.redAccent,
+          // Color de fondo
           backgroundColor: Colors.transparent,
+          // Animación de movimiento
           animationCurve: Curves.easeInOut,
           animationDuration: Duration(milliseconds: 600),
+          // Accion para cuando se pulse el boton principal.
           onTap: (int tappedIndex) {
             setState(() {
               _menuprincipal = _selector(tappedIndex);

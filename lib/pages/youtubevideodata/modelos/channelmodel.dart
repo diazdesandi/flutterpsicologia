@@ -1,5 +1,7 @@
 import 'videomodel.dart';
 
+// Clases para obtener la informacion del canal de youtube
+// Strings para recibir los datos
 class Channel {
   final String id;
   final String title;
@@ -9,6 +11,7 @@ class Channel {
   final String uploadPlaylistId;
   List<Video> videos;
 
+// Metodo para recibir datos
   Channel({
     this.id,
     this.title,
@@ -19,6 +22,7 @@ class Channel {
     this.videos,
   });
 
+// Regreso de información
   factory Channel.fromMap(Map<String, dynamic> map) {
     return Channel(
       id: map['id'],

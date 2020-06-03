@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+
+// Clase para mostrar el perfil.
 class ProfileClass extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -16,6 +18,8 @@ class MyProfile extends StatefulWidget {
   _MyProfilePageState createState() => new _MyProfilePageState();
 }
 
+// Basado en el estado de la clase se establece un widget para mostrar la interfaz 
+// del perfil con la informacion y las opciones deseadas.
 class _MyProfilePageState extends State<MyProfile> {
   @override
   Widget build(BuildContext context) {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
+// Clase para obtener los detalles las noticias a mostrar
 class NewsDetails extends StatefulWidget {
   NewsDetails({Key key, this.title, this.url}) : super(key: key);
 
@@ -10,7 +11,7 @@ class NewsDetails extends StatefulWidget {
   @override
   _NewsDetailsState createState() => _NewsDetailsState();
 }
-
+// Clase que muestra las noticias.
 class _NewsDetailsState extends State<NewsDetails> {
   @override
   Widget build(BuildContext context) {

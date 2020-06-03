@@ -4,11 +4,13 @@ import 'login/logincard.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'navbarscreens/navbarmaster.dart';
 
+// Parte inicial de la aplicacion, se inicializa el login
 void main() => runApp(MaterialApp(
       home: MyApp(),
       debugShowCheckedModeBanner: false,
     ));
 
+// Estado del widget
 class MyApp extends StatefulWidget {
   @override
   _MyAppState createState() => new _MyAppState();
@@ -23,6 +25,7 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
+// Boton de opcion con cierto tamaño (width y height) y cierto margen (padding)
   Widget radioButton(bool isSelected) => Container(
         width: 16.0,
         height: 16.0,
@@ -48,7 +51,7 @@ class _MyAppState extends State<MyApp> {
           color: Colors.black26.withOpacity(.2),
         ),
       );
-
+// Widget principal para construir la interfaz, donde se pone el titulo de "Iniciar sesion"
   @override
   Widget build(BuildContext context) {
     ScreenUtil.instance = ScreenUtil.getInstance()..init(context);

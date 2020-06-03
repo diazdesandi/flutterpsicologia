@@ -5,6 +5,7 @@ import 'package:flutterpsicologia/pages/youtubevideodata/modelos/videomodel.dart
 import 'package:http/http.dart' as http;
 import 'keys.dart';
 
+// Servicio API para obtener videos e información del canal de Youtube
 class API_Service {
   API_Service._instantiate();
 
@@ -13,6 +14,7 @@ class API_Service {
   final String _baseurl = 'www.googleapis.com';
   String _nextpagetoken = '';
 
+// Representación en interfaz del canal de YouTube
   Future<Channel> fetchChannel({String channelId}) async {
     Map<String, String> parameters = {
       'part': 'snippet, contentDetails, statistics',
@@ -43,7 +45,7 @@ class API_Service {
       throw json.decode(response.body)['error']['message'];
     }
   }
-
+  // Metodo asicrono para obtener 8 videos a la vez, con el fin de no saturar la memoria, se usa la API_KEY para esto.
   Future<List<Video>> fetchVideosFromPlaylist({String playlistId}) async {
     Map<String, String> parameters = {
       'part': 'snippet',
@@ -61,7 +63,7 @@ class API_Service {
       HttpHeaders.contentTypeHeader: 'application/json',
     };
 
-    // Get Playlist Videos
+    // Obtiene videos de la playlist princ
     var response = await http.get(uri, headers: headers);
     if (response.statusCode == 200) {
       var data = json.decode(response.body);
@@ -69,7 +71,7 @@ class API_Service {
       _nextpagetoken = data['nextPageToken'] ?? '';
       List<dynamic> videosJson = data['items'];
 
-      // Fetch first eight videos from uploads playlist
+      // Recibe 8 videos
       List<Video> videos = [];
       videosJson.forEach(
         (json) => videos.add(

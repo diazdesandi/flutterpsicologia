@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
+// Clase para establecer el reproductor de video.
+// Inicializacion de video
 class VideoScreen extends StatefulWidget {
   final String id;
 
@@ -24,7 +26,7 @@ class _VideoScreenState extends State<VideoScreen> {
       ),
     );
   }
-
+// Titulo de la pestaña
   @override
   Widget build(BuildContext context) {
     return Scaffold(
