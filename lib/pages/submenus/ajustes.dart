@@ -83,9 +83,7 @@ class _AjustesState extends State<Ajustes> {
                               Icon(Icons.lock_outline, color: Colors.redAccent),
                           title: Text("Cambiar contraseña"),
                           trailing: Icon(Icons.keyboard_arrow_right),
-                          onTap: () {
-                            //open change password
-                          },
+                          onTap: () {},
                         ),
                         _buildDivider(),
                         ListTile(
@@ -95,9 +93,7 @@ class _AjustesState extends State<Ajustes> {
                           ),
                           title: Text("Privacidad"),
                           trailing: Icon(Icons.keyboard_arrow_right),
-                          onTap: () {
-                            //open change language
-                          },
+                          onTap: () {},
                         ),
                         _buildDivider(),
                         ListTile(
@@ -107,9 +103,7 @@ class _AjustesState extends State<Ajustes> {
                           ),
                           title: Text("Cambiar ubicación"),
                           trailing: Icon(Icons.keyboard_arrow_right),
-                          onTap: () {
-                            //open change location
-                          },
+                          onTap: () {},
                         ),
                       ],
                     ),

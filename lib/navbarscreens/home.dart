@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutterpsicologia/login/auth.dart';
 import 'package:flutterpsicologia/pages/submenus/calendar.dart';
-import 'package:flutterpsicologia/pages/submenus/ajustes.dart';
 import 'package:flutterpsicologia/pages/submenus/profile.dart';
 import 'package:flutterpsicologia/pages/submenus/notifications.dart';
 import 'package:styled_widget/styled_widget.dart';
+import 'package:provider/provider.dart';
 
 // Clase de pantalla de principal
 class Home extends StatelessWidget {
@@ -16,6 +17,7 @@ class Home extends StatelessWidget {
         ));
   }
 }
+
 // Clase userpage donde se crea el widget con la informacion del perfil que ha iniciado sesion
 class UserPage extends StatelessWidget {
   @override
@@ -52,7 +54,7 @@ class UserCard extends StatelessWidget {
       <Widget>[
         // Nombre del usuario que inicio sesion
         Text(
-          'René Jiménez',
+          'Nombre de usuario',
           style: TextStyle(
             color: Colors.white,
             fontSize: 18,
@@ -62,6 +64,7 @@ class UserCard extends StatelessWidget {
       ].toColumn(crossAxisAlignment: CrossAxisAlignment.start),
     ].toRow();
   }
+
 // Widget donde se establece el color y la forma de los bordes donde se muestra la informacion de usuario
   @override
   Widget build(BuildContext context) {
@@ -79,6 +82,7 @@ class UserCard extends StatelessWidget {
         .alignment(Alignment.center);
   }
 }
+
 // Clase de menu principal donde se establecen todas las opciones disponibles en la aplicacion
 class Dashpage extends StatelessWidget {
   @override
@@ -170,15 +174,14 @@ class Dashpage extends StatelessWidget {
                                 color: Colors.orange,
                                 iconSize: 30.0,
                                 onPressed: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => Ajustes()));
+                                  context
+                                      .read<AuthenticationService>()
+                                      .signOut();
                                 },
                               ),
                             ),
                             SizedBox(height: 8.0),
-                            Text('Ajustes\n',
+                            Text('Cerrar\n',
                                 style: TextStyle(
                                     fontSize: 15,
                                     color: Colors.black54,
@@ -265,7 +268,7 @@ class Dashpage extends StatelessWidget {
                               ),
                             ),
                             SizedBox(height: 8.0),
-                            Text('Notificaciones',
+                            Text('Ajustes',
                                 style: TextStyle(
                                     color: Colors.black54,
                                     fontSize: 15,

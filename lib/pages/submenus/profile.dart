@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutterpsicologia/login/auth.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:provider/provider.dart';
 
 // Clase para mostrar el perfil.
 class ProfileClass extends StatelessWidget {
@@ -18,7 +19,7 @@ class MyProfile extends StatefulWidget {
   _MyProfilePageState createState() => new _MyProfilePageState();
 }
 
-// Basado en el estado de la clase se establece un widget para mostrar la interfaz 
+// Basado en el estado de la clase se establece un widget para mostrar la interfaz
 // del perfil con la informacion y las opciones deseadas.
 class _MyProfilePageState extends State<MyProfile> {
   @override
@@ -73,7 +74,11 @@ class _MyProfilePageState extends State<MyProfile> {
                                 textColor: Colors.black87,
                                 color: Colors.transparent,
                                 child: Text('Cerrar sesión'),
-                                onPressed: () {})),
+                                onPressed: () {
+                                  context
+                                      .read<AuthenticationService>()
+                                      .signOut();
+                                })),
                       ),
                     ))
               ],

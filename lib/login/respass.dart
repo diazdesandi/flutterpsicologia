@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../main.dart';
-import 'widcorre.dart';
+//flutter_screenuitl >= 1.2
 
 class Recontra extends StatelessWidget {
   Recontra({
@@ -17,9 +17,7 @@ class Recontra extends StatelessWidget {
         children: <Widget>[
           Transform.translate(
             offset: Offset(140.0, 500.0),
-            child:
-                // Adobe XD layer: 'Submit' (text)
-                FlatButton(
+            child: FlatButton(
               textColor: Colors.white,
               color: Colors.redAccent,
               onPressed: () {
@@ -56,9 +54,7 @@ class Recontra extends StatelessWidget {
           ),
           Transform.translate(
             offset: Offset(33.0, 213.0),
-            child:
-                // Adobe XD layer: 'Forgot Password' (text)
-                Text(
+            child: Text(
               'Reestablecer contraseña',
               style: TextStyle(
                 fontFamily: 'Poppins',
@@ -72,5 +68,31 @@ class Recontra extends StatelessWidget {
         ],
       ),
     );
+  }
+}
+
+class Widcorredos extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new Container(
+        width: 300,
+        padding: EdgeInsets.only(left: 55.0, right: 0.0, top: 370.0),
+        child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Text("Correo electrónico",
+                  style: GoogleFonts.roboto(
+                      textStyle: TextStyle(
+                          fontSize: ScreenUtil.getInstance().setSp(26),
+                          fontWeight: FontWeight.bold,
+                          color: Colors.redAccent))),
+              TextField(
+                decoration: InputDecoration(
+                    hintStyle: TextStyle(color: Colors.grey, fontSize: 12.0)),
+              ),
+              SizedBox(
+                height: ScreenUtil.getInstance().setHeight(30),
+              )
+            ]));
   }
 }

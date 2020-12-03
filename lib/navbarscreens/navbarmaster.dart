@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-
+import 'cerrarsesion.dart';
 import 'feed.dart';
 import 'home.dart';
 import 'videos.dart';
@@ -22,6 +22,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   final MyFeed _articulos = MyFeed();
   final Home _menu = Home();
   final ClaseVideos _vids = ClaseVideos();
+  final CerrarSesion _cerrarSesion = CerrarSesion();
 
   Widget _menuprincipal = new Home();
 
@@ -36,6 +37,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
         break;
       case 2:
         return _vids;
+        break;
+      case 3:
+        return _cerrarSesion;
         break;
       default:
         return _menu;
@@ -56,6 +60,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
             Icon(Icons.rss_feed, size: 30, color: Colors.white),
             Icon(Icons.home, size: 30, color: Colors.white),
             Icon(Icons.ondemand_video, size: 30, color: Colors.white),
+            Icon(Icons.people, size: 30, color: Colors.white)
           ],
           // Color para la barra de navegación
           color: Colors.redAccent,

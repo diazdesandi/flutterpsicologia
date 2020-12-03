@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 // Clase de interfaz donde modifican los ajustes de notificacion.
 class Notifications extends StatefulWidget {
@@ -19,6 +18,7 @@ class _NotificationsState extends State<Notifications> {
   Brightness _getBrightness() {
     return _dark ? Brightness.dark : Brightness.light;
   }
+
 // Se realiza un override con la interfaz de la pantalla, la cual incluye los titulos asi como
 // los botones para manipular los ajutes de interfaz
   @override

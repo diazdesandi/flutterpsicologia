@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "62194768067",
+    "firebase_url": "https://test-2d6d7.firebaseio.com",
+    "project_id": "test-2d6d7",
+    "storage_bucket": "test-2d6d7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:62194768067:android:04ea13d98ce4d765bd6a76",
+        "android_client_info": {
+          "package_name": "com.example.flutterpsicologia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "62194768067-knbtcdpie7mi368ds6tcu28inngfu6l1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBq4Z5zYyYe_iTQoJ8hv8AZWlX-80t0oFo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "62194768067-knbtcdpie7mi368ds6tcu28inngfu6l1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
